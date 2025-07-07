@@ -1,45 +1,41 @@
-📚 API Catálogo de Livros — Trabalho Acadêmico
-Este repositório contém o projeto final da disciplina de Desenvolvimento Backend, focado na criação de uma API RESTful segura, modular e bem estruturada, permitindo o gerenciamento completo de um catálogo de livros.
+# 📚 API Catálogo de Livros — Trabalho Acadêmico
 
-A aplicação é desenvolvida com Node.js e JavaScript, utilizando o Express como framework web e o Sequelize ORM para integração com banco de dados MySQL. A documentação da API é feita com Swagger.
+Este repositório contém o projeto final da disciplina de **Desenvolvimento Backend**, focado na criação de uma **API RESTful segura, modular e bem estruturada**, permitindo o gerenciamento completo de um catálogo de livros.
 
-📌 Objetivo
+A aplicação é desenvolvida com **Node.js e JavaScript**, utilizando o **Express** como framework web e o **Sequelize ORM** para integração com banco de dados **MySQL**. A documentação da API é feita com **Swagger**.
+
+---
+
+## 📌 Objetivo
+
 O objetivo deste projeto é aplicar conceitos fundamentais do backend moderno, com foco em:
 
-🔐 Autenticação via JWT e proteção de rotas
+- 🔐 **Autenticação via JWT** e proteção de rotas
+- 📚 **Gestão de entidades**: Usuários, Gêneros, Livros e Listas de Leitura
+- 🔄 **Relacionamentos** entre entidades (ex: livro → gênero, usuário → lista de leitura)
+- 📘 **Documentação completa da API com Swagger**
+- 📦 **Código limpo, modular e com padrão MVC**
 
-📚 Gestão de entidades: Usuários, Gêneros, Livros e Listas de Leitura
+---
 
-🔄 Relacionamentos entre entidades (ex: livro → gênero, usuário → lista de leitura)
+## 🛠️ Tecnologias Utilizadas
 
-📘 Documentação completa da API com Swagger
+### Backend
 
-📦 Código limpo, modular e com padrão MVC
+- **Node.js** → Ambiente JavaScript no servidor
+- **Express.js** → Framework para criação de APIs REST
+- **MySQL** → Banco de dados relacional
+- **Sequelize** → ORM para modelagem e operações no banco
+- **JWT (jsonwebtoken)** → Autenticação segura
+- **bcryptjs** → Criptografia de senhas
+- **dotenv** → Gerenciamento de variáveis de ambiente
+- **Swagger** → Documentação interativa da API
+- **CORS** → Liberação de acesso cross-origin para clientes
+- **Nodemon** → Reinício automático em ambiente de desenvolvimento
 
-🛠️ Tecnologias Utilizadas
-Backend
-Node.js → Ambiente JavaScript no servidor
+---
 
-Express.js → Framework para criação de APIs REST
-
-MySQL → Banco de dados relacional
-
-Sequelize → ORM para modelagem e operações no banco
-
-JWT (jsonwebtoken) → Autenticação segura
-
-bcryptjs → Criptografia de senhas
-
-dotenv → Gerenciamento de variáveis de ambiente
-
-Swagger → Documentação interativa da API
-
-CORS → Liberação de acesso cross-origin para clientes
-
-Nodemon → Reinício automático em ambiente de desenvolvimento
-
-📁 Estrutura do Projeto
-Plaintext
+## 📁 Estrutura do Projeto
 
 📦 api-catalogo-livros
 ├── 📁 config/         → Configuração do Sequelize (.sequelizerc, config.js)
@@ -57,119 +53,120 @@ Plaintext
 ├── .sequelizerc      → Configuração dos caminhos do Sequelize-CLI
 ├── package.json      → Dependências e scripts do projeto
 └── README.md
-🚀 Como Executar o Projeto
-✅ Pré-requisitos
-Node.js (versão 14 ou superior)
 
-MySQL Server (recomenda-se o uso do XAMPP, Docker ou o instalador oficial)
+## 🚀 Como Executar o Projeto
 
-Um cliente de banco de dados como MySQL Workbench ou DBeaver (recomendado)
+### ✅ Pré-requisitos
 
-🧰 Instalação e Execução
-Clone o projeto:
+-   **Node.js** (versão 14 ou superior)
+-   **MySQL Server** (recomenda-se o uso do XAMPP, Docker ou o instalador oficial)
+-   Um cliente de banco de dados como **MySQL Workbench** ou **DBeaver** (recomendado)
 
-Bash
+### 🧰 Instalação e Execução
 
-git clone https://github.com/CristhianMazon/api-catalogo-livros.git
-cd api-catalogo-livros
-Instale as dependências:
+1.  **Clone o projeto:**
+    ```bash
+    git clone [https://github.com/CristhianMazon/api-catalogo-livros.git](https://github.com/CristhianMazon/api-catalogo-livros.git)
+    cd api-catalogo-livros
+    ```
 
-Bash
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
 
-npm install
-Configure o ambiente:
+3.  **Configure o ambiente:**
+    -   Copie o arquivo `.env.example` para um novo arquivo chamado `.env`.
+    -   Abra o `.env` e ajuste as variáveis do banco de dados (`DB_USER`, `DB_PASSWORD`, etc.) de acordo com a sua instalação do MySQL.
 
-Copie o arquivo .env.example para um novo arquivo chamado .env.
+    **Exemplo de `.env`:**
+    ```env
+    # Porta em que a aplicação vai rodar
+    PORT=3333
 
-Abra o .env e ajuste as variáveis do banco de dados (DB_USER, DB_PASSWORD, etc.) de acordo com a sua instalação do MySQL.
+    # Configurações do Banco de Dados
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASS=sua_senha_do_mysql_aqui
+    DB_NAME=catalogo_livros_db
 
-Exemplo de .env:
+    # Segredo para a assinatura dos Tokens JWT
+    JWT_SECRET=minha-chave-secreta-super-segura-2025
+    ```
 
-Snippet de código
+4.  **Crie e popule o banco de dados:**
+    -   Certifique-se de que seu servidor MySQL está rodando.
+    -   No seu cliente de banco de dados (ex: MySQL Workbench), crie um novo schema (banco de dados) com o nome que você definiu em `DB_NAME`.
+    -   No terminal, na pasta do projeto, execute os comandos do Sequelize para criar as tabelas e inserir os dados iniciais:
+        ```bash
+        # Executa as migrations para criar as tabelas
+        npx sequelize-cli db:migrate
 
-# Porta em que a aplicação vai rodar
-PORT=3333
+        # Executa os seeders para popular o banco
+        npx sequelize-cli db:seed:all
+        ```
 
-# Configurações do Banco de Dados
-DB_HOST=localhost
-DB_USER=root
-DB_PASS=sua_senha_do_mysql_aqui
-DB_NAME=catalogo_livros_db
+5.  **Inicie o servidor:**
+    ```bash
+    npm run dev
+    ```
+    A API estará disponível em `http://localhost:3333` (ou a porta que você definiu).
 
-# Segredo para a assinatura dos Tokens JWT
-JWT_SECRET=minha-chave-secreta-super-segura-2025
-Crie e popule o banco de dados:
+---
 
-Certifique-se de que seu servidor MySQL está rodando.
+## 📘 Documentação da API
 
-No seu cliente de banco de dados (ex: MySQL Workbench), crie um novo schema (banco de dados) com o nome que você definiu em DB_NAME.
-
-No terminal, na pasta do projeto, execute os comandos do Sequelize para criar as tabelas e inserir os dados iniciais:
-
-Bash
-
-# Executa as migrations para criar as tabelas
-npx sequelize-cli db:migrate
-
-# Executa os seeders para popular o banco
-npx sequelize-cli db:seed:all
-Inicie o servidor:
-
-Bash
-
-npm run dev
-A API estará disponível em http://localhost:3333 (ou a porta que você definiu).
-
-📘 Documentação da API
 Após iniciar o servidor, acesse a documentação interativa gerada com Swagger no seu navegador:
 
-http://localhost:3333/api-docs
+**`http://localhost:3333/api-docs`**
 
 Lá, você poderá testar todos os endpoints de forma visual.
 
-🔐 Autenticação
-A API utiliza JWT. Para acessar as rotas protegidas (praticamente todas, exceto cadastro e login), você deve primeiro obter um token através do endpoint POST /users/sessions.
+---
 
-Depois, em todas as outras requisições, envie o token no cabeçalho Authorization:
+## 🔐 Autenticação
 
-Authorization: Bearer seu_token_jwt_aqui
+A API utiliza JWT. Para acessar as rotas protegidas (praticamente todas, exceto cadastro e login), você deve primeiro obter um token através do endpoint `POST /users/sessions`.
 
-📚 Endpoints Principais
-Usuários (/users)
-POST /users → Cadastro de um novo usuário.
+Depois, em todas as outras requisições, envie o token no cabeçalho `Authorization`:
 
-POST /users/sessions → Login para obter um token JWT.
+`Authorization: Bearer seu_token_jwt_aqui`
 
-Livros (/books)
-GET /books → Lista todos os livros.
+---
 
-POST /books → Cria um novo livro.
+## 📚 Endpoints Principais
 
-GET /books/{id} → Busca um livro específico pelo ID.
+### Usuários (`/users`)
 
-PUT /books/{id} → Atualiza os dados de um livro.
+-   `POST /users` → Cadastro de um novo usuário.
+-   `POST /users/sessions` → Login para obter um token JWT.
 
-DELETE /books/{id} → Remove um livro.
+### Livros (`/books`)
 
-Gêneros (/genres)
-GET /genres → Lista todos os gêneros.
+-   `GET /books` → Lista todos os livros.
+-   `POST /books` → Cria um novo livro.
+-   `GET /books/{id}` → Busca um livro específico pelo ID.
+-   `PUT /books/{id}` → Atualiza os dados de um livro.
+-   `DELETE /books/{id}` → Remove um livro.
 
-POST /genres → Cria um novo gênero.
+### Gêneros (`/genres`)
 
-DELETE /genres/{id} → Remove um gênero.
+-   `GET /genres` → Lista todos os gêneros.
+-   `POST /genres` → Cria um novo gênero.
+-   `DELETE /genres/{id}` → Remove um gênero.
 
-Lista de Leitura (/reading-lists)
-GET /reading-lists → Mostra a lista de leitura do usuário autenticado.
+### Lista de Leitura (`/reading-lists`)
 
-POST /reading-lists/{book_id} → Adiciona um livro à lista de leitura.
+-   `GET /reading-lists` → Mostra a lista de leitura do usuário autenticado.
+-   `POST /reading-lists/{book_id}` → Adiciona um livro à lista de leitura.
+-   `DELETE /reading-lists/{book_id}` → Remove um livro da lista de leitura.
 
-DELETE /reading-lists/{book_id} → Remove um livro da lista de leitura.
+---
 
-👨‍💻 Autor
-Cristhian Silveira Mazon
+## 👨‍💻 Autor
 
-Email: cristhian.s.mazon@gmail.com
+**Cristhian Silveira Mazon**
 
-LinkedIn: https://www.linkedin.com/in/cristhian-mazon/
-
-GitHub: https://github.com/CristhianMazon
+-   **Email:** cristhian.s.mazon@gmail.com
+-   **LinkedIn:** [https://www.linkedin.com/in/cristhian-mazon/](https://www.linkedin.com/in/cristhian-mazon/)
+-   **GitHub:** [https://github.com/CristhianMazon](https://github.com/CristhianMazon)
