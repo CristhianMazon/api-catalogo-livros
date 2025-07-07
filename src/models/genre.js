@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // --- CÓDIGO ADICIONADO ---
       // Esta linha define que um Gênero (Genre) pode ter muitos Livros (Book).
       this.hasMany(models.Book, { foreignKey: 'genre_id', as: 'books' });
       // -------------------------

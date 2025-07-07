@@ -1,6 +1,3 @@
-// src/controllers/ReadingListController.js
-
-// --- CAMINHOS CORRIGIDOS AQUI ---
 const { User, Book } = require('../models');
 
 class ReadingListController {

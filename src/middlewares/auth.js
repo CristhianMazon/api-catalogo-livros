@@ -1,6 +1,3 @@
-// src/middlewares/auth.js
-// Middleware para verificar a autenticação via token JWT.
-
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 const authConfig = require('../config/auth');

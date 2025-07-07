@@ -8,7 +8,7 @@ module.exports = {
         publisher: 'Aleph',
         publication_year: 2017,
         place_of_publication: 'São Paulo',
-        genre_id: 1, // Ficção Científica
+        genre_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -18,7 +18,7 @@ module.exports = {
         publisher: 'HarperCollins',
         publication_year: 2019,
         place_of_publication: 'Rio de Janeiro',
-        genre_id: 2, // Fantasia
+        genre_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       }

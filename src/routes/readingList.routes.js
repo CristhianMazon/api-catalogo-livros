@@ -1,5 +1,3 @@
-// src/routes/readingList.routes.js
-
 const { Router } = require('express');
 const ReadingListController = require('../controllers/ReadingListController');
 const authMiddleware = require('../middlewares/auth');

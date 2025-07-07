@@ -1,5 +1,3 @@
-// src/routes/genres.routes.js
-
 const { Router } = require('express');
 const GenreController = require('../controllers/GenreController');
 const authMiddleware = require('../middlewares/auth');

@@ -1,6 +1,4 @@
-// src/services/AbntService.js
 // Contém a lógica de negócio para a formatação ABNT.
-
 class AbntService {
   /**
    * Formata um objeto de livro para uma string de citação ABNT NBR 6023.

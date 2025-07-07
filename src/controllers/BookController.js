@@ -1,7 +1,3 @@
-// src/controllers/BookController.js
-
-// --- CAMINHOS CORRIGIDOS AQUI ---
-// Para sair de 'controllers' e entrar em 'models', basta voltar um nível ('../')
 const { Book, Genre } = require('../models');
 const AbntService = require('../services/AbntService');
 
@@ -85,7 +81,7 @@ class BookController {
 
       await book.destroy();
 
-      return res.status(204).send(); // 204 No Content
+      return res.status(204).send();
     } catch (error) {
       return res.status(500).json({ error: 'Falha ao deletar livro.', details: error.message });
     }

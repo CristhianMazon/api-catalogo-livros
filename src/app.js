@@ -1,5 +1,3 @@
-// src/app.js
-
 require('dotenv').config();
 
 const express = require('express');
@@ -8,7 +6,6 @@ const swaggerUi = require('swagger-ui-express');
 const routes = require('./routes');
 const swaggerDocs = require('./docs/swagger');
 
-// A linha 'require('./database')' foi removida. Não é mais necessária.
 
 class App {
   constructor() {

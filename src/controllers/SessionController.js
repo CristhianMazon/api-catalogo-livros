@@ -1,5 +1,3 @@
-// src/controllers/SessionController.js
-
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 const authConfig = require('../config/auth');

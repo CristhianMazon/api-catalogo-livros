@@ -1,5 +1,3 @@
-// src/controllers/GenreController.js
-
 const { Genre } = require('../models');
 
 class GenreController {
@@ -28,8 +26,6 @@ class GenreController {
       return res.status(500).json({ error: 'Falha ao criar gênero.', details: error.message });
     }
   }
-
-  // --- NOVO MÉTODO ADICIONADO ---
   // Apaga um gênero
   async delete(req, res) {
     try {
@@ -42,7 +38,7 @@ class GenreController {
 
       await genre.destroy();
 
-      return res.status(204).send(); // Retorna 204 No Content para indicar sucesso
+      return res.status(204).send();
     } catch (error) {
       return res.status(500).json({ error: 'Falha ao apagar gênero.', details: error.message });
     }

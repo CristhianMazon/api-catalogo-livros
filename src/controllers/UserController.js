@@ -1,5 +1,3 @@
-// src/controllers/UserController.js
-
 const { User } = require('../models');
 
 // Controller exclusivo para o CRUD de usuários.
@@ -24,8 +22,6 @@ class UserController {
       return res.status(500).json({ error: 'Falha no registro do usuário.', details: error.message });
     }
   }
-
-  // Outros métodos do CRUD de usuário (update, show, delete) poderiam ser adicionados aqui.
 }
 
 module.exports = new UserController();

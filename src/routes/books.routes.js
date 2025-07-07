@@ -1,5 +1,3 @@
-// src/routes/books.routes.js
-
 const { Router } = require('express');
 const BookController = require('../controllers/BookController');
 const authMiddleware = require('../middlewares/auth');

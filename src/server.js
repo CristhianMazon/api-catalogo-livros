@@ -1,4 +1,3 @@
-// src/server.js
 // Ponto de entrada da aplicação.
 // Responsável por importar o app Express e iniciar o servidor.
 

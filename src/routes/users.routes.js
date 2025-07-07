@@ -1,6 +1,4 @@
-// src/routes/users.routes.js
 const { Router } = require('express');
-// CORREÇÃO: Importa os controllers de seus novos arquivos.
 const UserController = require('../controllers/UserController');
 const SessionController = require('../controllers/SessionController');
 

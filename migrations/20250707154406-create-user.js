@@ -1,4 +1,3 @@
-// migrations/20250707154406-create-user.js
 'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -18,8 +17,6 @@ module.exports = {
         allowNull: false,
         unique: true
       },
-      // --- CORREÇÃO AQUI ---
-      // O nome da coluna deve ser 'password_hash' para bater com o model.
       password_hash: {
         type: Sequelize.STRING,
         allowNull: false

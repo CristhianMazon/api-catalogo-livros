@@ -30,16 +30,13 @@ module.exports = {
       pages: {
         type: Sequelize.INTEGER
       },
-      // --- CÓDIGO ADICIONADO ---
-      // Esta é a chave estrangeira que conecta o livro a um gênero.
       genre_id: {
         type: Sequelize.INTEGER,
-        references: { model: 'Genres', key: 'id' }, // Informa que é uma referência à tabela 'Genres'
-        onUpdate: 'CASCADE', // Se o id do gênero mudar, atualiza aqui também
-        onDelete: 'SET NULL', // Se um gênero for deletado, o campo nos livros associados ficará nulo
+        references: { model: 'Genres', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: true,
       },
-      // -------------------------
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
