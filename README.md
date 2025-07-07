@@ -37,6 +37,7 @@ O objetivo deste projeto é aplicar conceitos fundamentais do backend moderno, c
 
 ## 📁 Estrutura do Projeto
 
+```text
 📦 api-catalogo-livros
 ├── 📁 config/         → Configuração do Sequelize (.sequelizerc, config.js)
 ├── 📁 migrations/     → Migrations da estrutura do banco
@@ -53,6 +54,7 @@ O objetivo deste projeto é aplicar conceitos fundamentais do backend moderno, c
 ├── .sequelizerc      → Configuração dos caminhos do Sequelize-CLI
 ├── package.json      → Dependências e scripts do projeto
 └── README.md
+```
 
 ## 🚀 Como Executar o Projeto
 
