@@ -38,9 +38,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
   });
 
-  // --- CORREÇÃO DEFINITIVA ---
-  // Vamos definir o hook fora do init, usando o método addHook.
-  // Esta é uma forma mais explícita e garantida de registrar o hook.
   User.addHook('beforeSave', async (user) => {
     if (user.password) {
       user.password_hash = await bcrypt.hash(user.password, 8);
