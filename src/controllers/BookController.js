@@ -1,7 +1,8 @@
 // src/controllers/BookController.js
 
-const Book = require('../../models/Book');
-const Genre = require('../../models/Genre');
+// --- CAMINHOS CORRIGIDOS AQUI ---
+// Para sair de 'controllers' e entrar em 'models', basta voltar um nível ('../')
+const { Book, Genre } = require('../models');
 const AbntService = require('../services/AbntService');
 
 class BookController {

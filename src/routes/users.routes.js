@@ -1,22 +1,67 @@
 // src/routes/users.routes.js
-
 const { Router } = require('express');
 const { UserController, SessionController } = require('../controllers/UserController');
 const authMiddleware = require('../middlewares/auth');
 
 const usersRoutes = Router();
 
-// Rota para criar um novo usuário (cadastro)
+/**
+ * @swagger
+ * /users:
+ *   post:
+ *     summary: Cadastra um novo usuário
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *             example:
+ *               name: "Ada Lovelace"
+ *               email: "ada@example.com"
+ *               password: "password123"
+ *     responses:
+ *       201:
+ *         description: Usuário criado com sucesso
+ *       400:
+ *         description: E-mail já está em uso
+ */
 usersRoutes.post('/', UserController.store);
 
-// Rota para criar uma nova sessão (login)
+/**
+ * @swagger
+ * /users/sessions:
+ *   post:
+ *     summary: Autentica um usuário e retorna um token JWT
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *             example:
+ *               email: "ada@example.com"
+ *               password: "password123"
+ *     responses:
+ *       200:
+ *         description: Login bem-sucedido
+ *       401:
+ *         description: Credenciais inválidas
+ */
 usersRoutes.post('/sessions', SessionController.store);
-
-// Exemplo de rota protegida
-usersRoutes.get('/me', authMiddleware, (req, res) => {
-    // Graças ao middleware, temos o req.userId disponível
-    res.json({ message: `Olá, usuário com ID: ${req.userId}` });
-});
-
 
 module.exports = usersRoutes;

@@ -1,15 +1,14 @@
 // src/app.js
-// Arquivo de configuração do Express.
 
-require('dotenv').config(); // Carrega as variáveis de ambiente
+require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocs = require('./docs/swagger');
 const routes = require('./routes');
+const swaggerDocs = require('./docs/swagger');
 
-// Importa a conexão com o banco de dados
-require('./database');
+// A linha 'require('./database')' foi removida. Não é mais necessária.
 
 class App {
   constructor() {
@@ -19,14 +18,12 @@ class App {
   }
 
   middlewares() {
-    // Habilita o uso de JSON nas requisições
     this.server.use(express.json());
-    // Rota para a documentação do Swagger
+    this.server.use(cors());
     this.server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
   }
 
   routes() {
-    // Usa o arquivo principal de rotas
     this.server.use(routes);
   }
 }

@@ -1,3 +1,4 @@
+// src/models/book.js
 'use strict';
 const {
   Model
@@ -10,7 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      // --- CÓDIGO ADICIONADO ---
+      // Informa que um Livro (Book) pertence a um Gênero (Genre).
+      this.belongsTo(models.Genre, { foreignKey: 'genre_id', as: 'genre' });
+
+      // Informa a relação N:N com Usuários (User) através da tabela ReadingLists.
+      this.belongsToMany(models.User, {
+        foreignKey: 'book_id',
+        through: 'ReadingLists',
+        as: 'users'
+      });
+      // -------------------------
     }
   }
   Book.init({

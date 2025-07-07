@@ -2,15 +2,16 @@
   "name": "api-catalogo-livros",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
-  "dev": "nodemon src/server.js"
-},
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "dotenv": "^17.0.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",

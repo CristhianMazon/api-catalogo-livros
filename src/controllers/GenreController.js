@@ -1,6 +1,8 @@
 // src/controllers/GenreController.js
 
-const Genre = require('../../models/Genre');
+// --- CAMINHO CORRIGIDO AQUI ---
+// Importando o model a partir do diretório principal de models
+const { Genre } = require('../models');
 
 class GenreController {
   // Lista todos os gêneros
