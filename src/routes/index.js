@@ -12,6 +12,7 @@ const routes = Router();
 routes.use('/users', usersRoutes);
 routes.use('/books', booksRoutes);
 routes.use('/genres', genresRoutes);
-routes.use('/reading-list', readingListRoutes);
+// CORREÇÃO: A rota foi alterada para o plural, seguindo as boas práticas.
+routes.use('/reading-lists', readingListRoutes);
 
 module.exports = routes;

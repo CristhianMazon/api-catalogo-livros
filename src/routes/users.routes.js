@@ -1,7 +1,8 @@
 // src/routes/users.routes.js
 const { Router } = require('express');
-const { UserController, SessionController } = require('../controllers/UserController');
-const authMiddleware = require('../middlewares/auth');
+// CORREÇÃO: Importa os controllers de seus novos arquivos.
+const UserController = require('../controllers/UserController');
+const SessionController = require('../controllers/SessionController');
 
 const usersRoutes = Router();
 
