@@ -1,7 +1,5 @@
 // src/controllers/GenreController.js
 
-// --- CAMINHO CORRIGIDO AQUI ---
-// Importando o model a partir do diretório principal de models
 const { Genre } = require('../models');
 
 class GenreController {
@@ -9,7 +7,7 @@ class GenreController {
   async index(req, res) {
     try {
       const genres = await Genre.findAll({
-        order: [['name', 'ASC']], // Ordena por nome
+        order: [['name', 'ASC']],
       });
       return res.json(genres);
     } catch (error) {
@@ -28,6 +26,25 @@ class GenreController {
       return res.status(201).json(newGenre);
     } catch (error) {
       return res.status(500).json({ error: 'Falha ao criar gênero.', details: error.message });
+    }
+  }
+
+  // --- NOVO MÉTODO ADICIONADO ---
+  // Apaga um gênero
+  async delete(req, res) {
+    try {
+      const { id } = req.params;
+      const genre = await Genre.findByPk(id);
+
+      if (!genre) {
+        return res.status(404).json({ error: 'Gênero não encontrado.' });
+      }
+
+      await genre.destroy();
+
+      return res.status(204).send(); // Retorna 204 No Content para indicar sucesso
+    } catch (error) {
+      return res.status(500).json({ error: 'Falha ao apagar gênero.', details: error.message });
     }
   }
 }

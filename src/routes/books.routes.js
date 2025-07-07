@@ -155,7 +155,7 @@ booksRoutes.put('/:id', BookController.update);
  *           type: integer
  *         description: ID do livro a ser removido
  *     responses:
- *       200:
+ *       204:
  *         description: Livro removido com sucesso.
  *       404:
  *         description: Livro não encontrado.
