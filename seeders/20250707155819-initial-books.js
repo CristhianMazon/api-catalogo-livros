@@ -8,7 +8,7 @@ module.exports = {
         publisher: 'Aleph',
         publication_year: 2017,
         place_of_publication: 'São Paulo',
-        genre_id: 1,
+        genre_id: 1, // Ficção Científica
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -18,7 +18,47 @@ module.exports = {
         publisher: 'HarperCollins',
         publication_year: 2019,
         place_of_publication: 'Rio de Janeiro',
-        genre_id: 2,
+        genre_id: 2, // Fantasia
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Eu, Robô',
+        author: 'Isaac Asimov',
+        publisher: 'Aleph',
+        publication_year: 2013,
+        place_of_publication: 'São Paulo',
+        genre_id: 1, // Ficção Científica
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'A Batalha do Apocalipse',
+        author: 'Eduardo Spohr',
+        publisher: 'Verus',
+        publication_year: 2007,
+        place_of_publication: 'Rio de Janeiro',
+        genre_id: 2, // Fantasia
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Orgulho e Preconceito',
+        author: 'Jane Austen',
+        publisher: 'Martin Claret',
+        publication_year: 2017,
+        place_of_publication: 'São Paulo',
+        genre_id: 3, // Romance
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Sherlock Holmes: Um Estudo em Vermelho',
+        author: 'Arthur Conan Doyle',
+        publisher: 'Zahar',
+        publication_year: 2017,
+        place_of_publication: 'Rio de Janeiro',
+        genre_id: 4, // Mistério
         createdAt: new Date(),
         updatedAt: new Date()
       }

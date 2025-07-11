@@ -1,19 +1,8 @@
 const path = require('path');
 
-/**
- * Este arquivo de configuração diz ao Sequelize-CLI onde encontrar
- * os arquivos e pastas importantes do projeto.
- */
 module.exports = {
-  // Caminho para o arquivo de configuração do banco de dados.
-  'config': path.resolve('config', 'config.json'),
-
-  // Caminho para a pasta que contém os Models.
-  'models-path': path.resolve('src', 'models'),
-
-  // Caminho para a pasta que contém os Seeders (dados iniciais).
-  'seeders-path': path.resolve('seeders'),
-
-  // Caminho para a pasta que contém as Migrations (estrutura do banco).
-  'migrations-path': path.resolve('migrations'),
+  config: path.resolve(__dirname, 'config', 'config.js'),
+  'models-path': path.resolve(__dirname, 'src', 'models'),
+  'migrations-path': path.resolve(__dirname, 'migrations'),
+  'seeders-path': path.resolve(__dirname, 'seeders')
 };
