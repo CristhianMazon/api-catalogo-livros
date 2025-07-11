@@ -48,7 +48,6 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Removido `margin: 0 auto;` para que a barra de navegação ocupe toda a largura */
 }
 
 .nav-links {
@@ -88,15 +87,12 @@ h2 {
 /* Layout Geral */
 .app-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   min-height: calc(100vh - 80px);
   padding: 40px;
 }
 
 .container {
   width: 100%;
-  max-width: 1100px; /* Limita a largura máxima do container para evitar que ele fique muito largo em telas grandes */
   padding: 30px;
   background-color: var(--color-card-bg);
   border-radius: 12px;
