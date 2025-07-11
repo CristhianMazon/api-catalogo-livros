@@ -89,12 +89,6 @@ function BookList() {
         <Link to="/books/new" className="add-button">
           Adicionar Novo Livro
         </Link>
-        <Link to="/genres" className="manage-button">
-          Gerenciar Gêneros
-        </Link>
-        <Link to="/reading-list" className="view-list-button"> {/* Adicione essa linha */}
-          Minha Lista de Leitura
-        </Link>
       </div>
       <ul className="book-list">
         {books.length === 0 ? (

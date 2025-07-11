@@ -48,7 +48,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .nav-links {
@@ -88,10 +88,11 @@ h2 {
 /* Layout Geral */
 .app-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  /* justify-content: center; */
+  /* align-items: flex-start; */
   min-height: calc(100vh - 80px);
   padding: 40px;
+  width: 100%;
 }
 
 .container {
